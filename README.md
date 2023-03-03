@@ -1,6 +1,6 @@
 # Debian_Configure_PM2
 
-``
+```
 sudo apt upgrade -y && sudo apt update -y && sudo apt autoremove -y &&
 sudo apt install wget -y &&
 sudo apt-get install --reinstall ca-certificates -y &&
