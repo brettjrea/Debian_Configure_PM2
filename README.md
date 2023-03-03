@@ -10,4 +10,5 @@ sudo bash fixscripts.sh &&
 bash configure-pm2.sh && 
 sudo apt autoremove -y &&
 sudo apt clean -y
+pm2 start ecosystem.config.js
 ```
