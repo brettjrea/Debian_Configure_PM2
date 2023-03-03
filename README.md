@@ -12,3 +12,7 @@ sudo apt autoremove -y &&
 sudo apt clean -y
 pm2 start ecosystem.config.js
 ```
+
+```
+pm2 start ecosystem.config.js
+```
