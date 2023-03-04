@@ -1,6 +1,6 @@
 # Debian_Configure_PM2
 
-A script that creates an ecosystem.config.js file in home, my-backend, my-frontend for strapi and gatsby to start both processes.
+A script that creates an ecosystem.config.js file in home, my-backend,and my-frontend for Strapi and Gatsby to start both processes.
 
 ```
 sudo apt upgrade -y && sudo apt update -y && sudo apt autoremove -y &&
