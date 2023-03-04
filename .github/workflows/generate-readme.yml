@@ -1,4 +1,4 @@
-name: Update Readme from RawContent URL
+name: Update README from RawContent URL
 on:
   push:
     branches:
@@ -11,10 +11,14 @@ jobs:
         uses: actions/checkout@v2
       - name: Install markdown-include
         run: npm install markdown-include@latest
-      - name: Update Readme from RawContent URL
-        run: npx markdown-include --force ${{ github.event.repository.url }}/raw/${{ github.event.ref }}readme.md
+      - name: Update README from markdown-include
+        run: npx markdown-include README.md
       - name: Commit changes
         uses: EndBug/add-and-commit@v7
         with:
-          message: "Update README from rawcontent URL"
+          message: "Update README from markdown-include"
           add: "README.md"
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
