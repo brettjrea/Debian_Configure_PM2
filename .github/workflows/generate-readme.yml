@@ -12,7 +12,7 @@ jobs:
       - name: Install markdown-include
         run: npm install markdown-include@latest
       - name: Update Readme from RawContent URL
-        run: npx markdown-include --force ${{ github.event.repository.url }}/raw/${{ github.event.ref }}/path/to/your/file.md
+        run: npx markdown-include --force ${{ github.event.repository.url }}/raw/${{ github.event.ref }}readme.md
       - name: Commit changes
         uses: EndBug/add-and-commit@v7
         with:
