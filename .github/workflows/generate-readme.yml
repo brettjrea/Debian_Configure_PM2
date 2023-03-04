@@ -1,23 +1,22 @@
-name: Generate README
-
+name: Create Readme from RawContent URL
 on:
   push:
-    branches: [ main ]
-  workflow_dispatch:
-
+    branches:
+      - main
 jobs:
-  build:
+  create-readme:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout Repository
-      uses: actions/checkout@v2
-    - name: Install Node.js and NPM
-      uses: actions/setup-node@v2
-      with:
-        node-version: '16'
-    - name: Install markdown-include
-      run: npm install markdown-include
-    - name: Generate README.md
-      run: npx markdown-include README.template.md -o README.md
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Install markdown-include
+        run: npm install markdown-include@latest
+      - name: Create Readme from RawContent URL
+        run: |
+          echo "<!-- markdown-include(readme.md) -->" > README.md
+          npx markdown-include ${{ github.event.repository.url }}/raw/${{ github.event.ref }}/README.md >> README.md
+      - name: Commit changes
+        uses: EndBug/add-and-commit@v7
+        with:
+          message: "Automatically generated README"
+          add: "README.md"
