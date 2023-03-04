@@ -1,22 +1,20 @@
-name: Create Readme from RawContent URL
+name: Update Readme from RawContent URL
 on:
   push:
     branches:
       - main
 jobs:
-  create-readme:
+  update-readme:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
       - name: Install markdown-include
         run: npm install markdown-include@latest
-      - name: Create Readme from RawContent URL
-        run: |
-          echo "<!-- markdown-include(readme.md) -->" > README.md
-          npx markdown-include ${{ github.event.repository.url }}/raw/${{ github.event.ref }}/README.md >> README.md
+      - name: Update Readme from RawContent URL
+        run: npx markdown-include --force ${{ github.event.repository.url }}/raw/${{ github.event.ref }}/path/to/your/file.md
       - name: Commit changes
         uses: EndBug/add-and-commit@v7
         with:
-          message: "Automatically generated README"
+          message: "Update README from rawcontent URL"
           add: "README.md"
