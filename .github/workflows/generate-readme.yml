@@ -18,7 +18,7 @@ jobs:
         run: |
           toc=$(curl -sS https://raw.githubusercontent.com/brettjrea/Debian_Generate_Readme/main/table-of-contents.md)
           config=$(curl -sS https://raw.githubusercontent.com/brettjrea/Debian_Generate_Readme/main/configure-pm2.md)
-          readme="${toc}${config}"
+          readme="${toc} ${config}"
           echo "${readme}" > README.md
 
       - name: Auto commit
