@@ -1,1 +1,30 @@
+name: Generate Readme
 
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Combine files
+        uses: andstor/file-combiner-action@v1
+        with:
+          files: |
+            - url: 'https://raw.githubusercontent.com/brettjrea/Debian_Generate_Readme/main/table-of-contents.md'
+            - url: 'https://raw.githubusercontent.com/brettjrea/Debian_Generate_Readme/main/configure-pm2.md'
+          separator: '\n'
+
+      - name: Create readme file
+        run: |
+          echo "${{ steps.combine.outputs.combined }}" > README.md
+
+      - name: Commit changes
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: 'Update README file'
