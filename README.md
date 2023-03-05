@@ -1,3 +1,5 @@
+#### Title: "Node.js and Build Tools Installation Guide with Optional OS Upgrades"
+
 1. Optional OS upgrades:
    1. [Upgrade Debian Bullseye to Buster](https://github.com/brettjrea/Debian_Bullseye_Upgrade_Script)
    2. [Upgrade Ubuntu Focal to Jammy](https://github.com/brettjrea/Ubuntu_Jammy_Upgrade_Script)
@@ -14,7 +16,7 @@
    2. [Install Gatsby frontend](https://github.com/brettjrea/Gatsby_Typescript_Styled_Components)
    3. [Install PM2 Process](https://github.com/brettjrea/Debian_Configure_PM2)
 ---
-### Install PM2
+#### Install PM2
 ---
 
 PM2 is a process manager built on Node.js that makes it easy to launch, stop, and restart processes on your server. In this case, we will use it to create an ecosystem.config.js file in the home, my-backend, and my-frontend directories for Strapi and Gatsby, which allows you to start both processes with a single command.
@@ -44,3 +46,4 @@ This will start all processes defined in the ecosystem.config.js file. If you wa
 ```
 pm2 start ecosystem.config.js --name <process name>
 ```
+---
