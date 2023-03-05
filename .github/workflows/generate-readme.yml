@@ -20,12 +20,7 @@ jobs:
           echo "${readme}" > README.md
 
       - name: Commit changes
-        uses: actions/github-script@v4
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          script: |
-            git config --global user.name "Your Nam"
-            git config --global user.email "youremail@example.com"
-            git add README.md
-            git commit -m "Auto commit updated README.md"
-            git push origin main
+        run: |
+          git add README.md
+          git commit -m "Update README file"
+          git push origin main
