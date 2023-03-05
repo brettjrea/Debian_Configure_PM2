@@ -1,5 +1,4 @@
-___
-*Optional:*
+*Optional upgrade OS:*
 
 *[Upgrade Debian Bullseye to Buster](https://github.com/brettjrea/Debian_Bullseye_Upgrade_Script)*
 
@@ -8,9 +7,10 @@ ___
 ---
 *You will need node.*
 
-* [Install NVM](https://github.com/brettjrea/Debian_Install_NVM)
+*[Install NVM](https://github.com/brettjrea/Debian_Install_NVM)*
 
-* [Install NVS](https://github.com/brettjrea/Debian_Install_NVS)
+*[Install NVS](https://github.com/brettjrea/Debian_Install_NVS)*
+
 *Added 02/23 it is a cross-platform node based successor/replacement for NVM.*
 ---
 
@@ -26,8 +26,10 @@ ___
 
 *[Install Gatsby frontend](https://github.com/brettjrea/Gatsby_Typescript_Styled_Components)*
 
-*[Install PM2 Process](https://github.com/brettjrea/Debian_Configure_PM2)*# Install PM2
-A script that creates an ecosystem.config.js file in home, my-backend,and my-frontend for Strapi and Gatsby to start both processes.
+*[Install PM2 Process](https://github.com/brettjrea/Debian_Configure_PM2)*### Install PM2
+---
+
+PM2 is a process manager built on node that allows you to launch, stop, restart processes in this case it creates an ecosystem.config.js file in the home, my-backend,and my-frontend for Strapi and Gatsby to start both processes.
 
 ```
 sudo apt upgrade -y && sudo apt update -y && sudo apt autoremove -y &&
