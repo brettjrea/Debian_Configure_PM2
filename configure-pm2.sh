@@ -32,6 +32,6 @@ rm -f ${gatsby_dir}/ecosystem.config.js
 # Create the ecosystem.config.js file in the home directory
 echo "$ecosystem_config" > ~/ecosystem.config.js
 
-# Create the ecosystem.config.js files in the Strapi and Gatsby directories
+# Create the ecosystem.config.js files in the Strapi and Gatsby directories.
 echo "$ecosystem_config" > ${strapi_dir}/ecosystem.config.js
 echo "$ecosystem_config" > ${gatsby_dir}/ecosystem.config.js
